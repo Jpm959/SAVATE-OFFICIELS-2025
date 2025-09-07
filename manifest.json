@@ -1,0 +1,224 @@
+{
+  "name": "SAVATE OFFICIALS - Application Professionnelle",
+  "short_name": "Savate Officials",
+  "description": "Application PWA professionnelle pour la gestion des fiches officielles de Savate Boxe Française. Système distribué avec interface CPTE complète et synchronisation WebRTC temps réel.",
+  "version": "4.2.0",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/",
+  "id": "savate-officials-pwa",
+  "theme_color": "#2c3e50",
+  "background_color": "#ffffff",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["sports", "productivity", "utilities", "business"],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "monochrome"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-screenshot.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Interface délégué avec monitoring temps réel"
+    },
+    {
+      "src": "/screenshots/mobile-screenshot.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Interface juge CPTE complète"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Accès Délégué Officiel",
+      "short_name": "Délégué",
+      "description": "Accès direct à l'interface délégué officiel avec monitoring et export",
+      "url": "/?role=delegate",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Accès Juge CPTE",
+      "short_name": "Juge",
+      "description": "Accès direct à l'interface juge avec fiche CPTE complète",
+      "url": "/?role=judge",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Nouvelle Session",
+      "short_name": "Nouveau",
+      "description": "Créer une nouvelle session de rencontre",
+      "url": "/?action=new-session",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            ".csv",
+            ".json",
+            ".txt",
+            ".md",
+            ".xlsx",
+            "text/csv",
+            "application/json",
+            "text/plain",
+            "text/markdown",
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          ]
+        }
+      ]
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+savate",
+      "url": "/?protocol=%s"
+    },
+    {
+      "protocol": "web+savate-session",
+      "url": "/?session=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/file-handler",
+      "accept": {
+        "text/csv": [".csv"],
+        "application/json": [".json"],
+        "text/markdown": [".md"],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"]
+      }
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "features": [
+    "Cross Platform",
+    "WebRTC",
+    "Offline",
+    "Sync",
+    "Export",
+    "PWA",
+    "Responsive"
+  ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://savate-officials.app/"
+    }
+  ],
+  "permissions": [
+    "notifications",
+    "background-sync",
+    "persistent-storage"
+  ],
+  "serviceworker": {
+    "src": "/service-worker.js",
+    "scope": "/",
+    "update_via_cache": "none"
+  },
+  "splash_pages": null,
+  "gcm_sender_id": "103953800507",
+  "gcm_user_visible_only": true,
+  "start_url_params": {
+    "utm_source": "pwa",
+    "utm_medium": "app",
+    "utm_campaign": "savate-officials"
+  },
+  "capture_links": "existing-client-navigate",
+  "scope_extensions": [
+    {
+      "origin": "https://savate-officials.app"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/icons/*",
+        "/screenshots/*",
+        "/manifest.json"
+      ],
+      "matches": ["*"]
+    }
+  ]
+}
